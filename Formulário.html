@@ -1,0 +1,93 @@
+ <!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport">
+    <link rel="stylesheet" type="text/css" href="estilo.css" media="screen">
+<title> Cadastro de Estudantes </title>
+</head>
+ <body>
+    <div class="campo">
+     <h1 id="titulo"> Cadastro de Estudantes </h1>
+        <p id="subtitulo">Preencha todos os campos</p>
+     </div>
+    <form>
+  <fieldset class="grupo">
+    <div class="campo">
+         <label for="nome"><strong>Nome </strong></label>
+         <input type="text" name="nome" id="nome" required>
+     </div>
+         
+     <div class="campo">
+         <label for="sobrenome"><strong> Sobrenome </strong></label>
+         <input type="text" name="Sobrenome" id="Sobrenome" required>
+    </div>
+        </fieldset>
+        
+    <div class="campo">
+        <label for="Email"> <strong> Email  </strong></label>
+        <input type="email" nome="email" id="email" required>
+    </div>
+        
+        <div class="campo"> 
+            <label><strong> Você pertence ao </strong>  </label>
+            <label> 
+            <input type="radio" name="EF" value="Ensino Fundamental"> Ensino Fundamental 
+                </label>
+            <label> 
+            <input type="radio" name="EM" value="Ensino Médio"> Ensino Médio 
+                </label>
+        
+        </div>
+     
+        <div class="campo"> 
+        <label for="Ano escolar"> Ano Escolar </label>
+            <select id="Ano Escolar">
+                <option selected disabled value=""> Selecione </option>
+            <option>6º ano EF</option>
+            <option>7º ano EF</option>
+            <option>8º ano EF</option>
+            <option>9º ano EF</option>
+            <option>1º ano EM</option>
+            <option>2º ano EM</option>
+            <option>3º ano EM</option>
+            </select>
+        </div>
+     <fieldset class="grupo">
+         <div id="check">
+         <label>Escolha a disciplina que você mais gosta</label>
+             <ul id="top-list">
+            <li><input type="checkbox" id="Matemática" name="Matemática" value="Matemática">
+         <label for="Matemática">Matemática</label>
+          <li> <input type="checkbox" id="Física" name="Física" value="Física">
+         <label for="Física">Física</label></li>
+          <li> <input type="checkbox" id="Química" name="Química" value="Química">
+         <label for="Química">Química</label></li>
+         <li> <input type="checkbox" id="História" name="História" value="História">
+         <label for="História">História</label></li>
+          <li> <input type="checkbox" id="Biologia" name="Biologia" value="Biologia">
+         <label for="Biologia">Biologia</label></li>
+          <li> <input type="checkbox" id="Geografia" name="Geografia" value="Geografia">
+         <label for="Geografia">Geografia</label></li>
+         <li>  <input type="checkbox" id="Filosofia" name="Filosofia" value="Filosofia">
+         <label for="Filosofia">Filosofia</label></li>
+          <li> <input type="checkbox" id="Sociologia" name="Sociologia" value="Sociologia">
+         <label for="Sociologia">Sociologia</label></li>
+           <li> <input type="checkbox" id="Português" name="Português" value="Português">
+         <label for="Português">Português</label></li>
+        </ul>
+                 </div>
+             
+        </fieldset>
+         
+        <div class="campo">
+        <br> <label> Espaço para dúvidas </label>
+    <textarea rows="10" style="width: 15em" id="Dúvidas" name="Dúvidas"></textarea>
+        </div>
+    
+    <button type="submit"> Fim </button>     
+     
+     </form>
+    </body>
+
+</html>
