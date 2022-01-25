@@ -6,8 +6,9 @@
     <title>RGB Color</title>
     <style>
     * {
-    padding: 0;
-    margin: 0;
+   margin:0; 
+   padding: 0;
+   
 }
 
 body {
@@ -17,8 +18,13 @@ body {
     align-content: center;
     font-family: cursive;
     font-size: 20px;
-    margin-top: 20px;
-    margin-left: 20px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+    
 }
 
 .box-flex {
@@ -48,15 +54,26 @@ body {
     height: 150px;
     width: 150px;
     background: #000;
+
 }
+ .red {
+     color:red;
+        }
+.green{
+    color: green;
+        }
+.blue{
+    color:blue;
+        }
+
     </style>
     </head>
 <body>
       <div class="box-flex">
         <div class="box-label">
-            <p>(R) Red</p>
-            <p>(G) Green</p>
-            <p>(B) Blue</p>
+           <p class="red"><strong>(R) Red </strong></p>
+           <p class="green"><strong> (G) Green </strong></p> 
+           <p class="blue"><strong> (B) Blue </strong></p>
         </div>
         <div class="box-range">
             <input type="range" id="rangeRed" name="rangeRed" min="0" max="255" value="0">
