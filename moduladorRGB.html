@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGB Color</title>
+    <style>
+    * {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    font-family: cursive;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.box-flex {
+    display: flex;
+    align-items: center;
+}
+
+.box-range,
+.input-values {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-values input {
+    margin: 15px;
+}
+
+.box-range input,
+.box-label p {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    margin-right: 50px;
+}
+
+.box-color {
+    height: 150px;
+    width: 150px;
+    background: #000;
+}
+    </style>
+    </head>
+<body>
+      <div class="box-flex">
+        <div class="box-label">
+            <p>(R) Red</p>
+            <p>(G) Green</p>
+            <p>(B) Blue</p>
+        </div>
+        <div class="box-range">
+            <input type="range" id="rangeRed" name="rangeRed" min="0" max="255" value="0">
+            <input type="range" id="rangeGreen" name="rangeRed" min="0" max="255" value="0">
+            <input type="range" id="rangeBlue" name="rangeRed" min="0" max="255" value="0">
+        </div>
+        <div class="input-values">
+            <input type="text" name="inputRed" id="inputRed" disabled value="0">
+            <input type="text" name="inputGreen" id="inputGreen" disabled value="0">
+            <input type="text" name="inputBlue" id="inputBlue" disabled value="0">
+        </div>
+    </div>
+    <div class="box-color" id="boxRGB"></div>
+    
+    <script>
+    window.addEventListener('load', start);
+
+function start() {
+    changeRange();
+    listenChangeRange();
+}
+
+function changeRange() {
+    var rangeRed = document.querySelector('#rangeRed'),
+        rangeGreen = document.querySelector('#rangeGreen'),
+        rangeBlue = document.querySelector('#rangeBlue'),
+        inputRed = document.querySelector('#inputRed'),
+        inputGreen = document.querySelector('#inputGreen'),
+        inputBlue = document.querySelector('#inputBlue'),
+        boxRGB = document.querySelector('#boxRGB'),
+        bgColor = `rgb(${rangeRed.value}, ${rangeGreen.value}, ${rangeBlue.value})`;
+
+    boxRGB.style.background = bgColor;
+
+    createRange(rangeRed, 'input', inputRed);
+    createRange(rangeGreen, 'input', inputGreen);
+    createRange(rangeBlue, 'input', inputBlue);
+}
+
+function listenChangeRange(){
+    document.querySelector('#rangeRed').addEventListener('input', changeRange)
+    document.querySelector('#rangeGreen').addEventListener('input', changeRange)
+    document.querySelector('#rangeBlue').addEventListener('input', changeRange)
+}
+
+function createRange(rangeName, eventType, inputValueName) {
+    rangeName.addEventListener(eventType, event => {
+        var count0To255 = event.target.value;
+        inputValueName.value = count0To255;
+    })
+}
+
+    </script>
+    
+     </body>
+</html>
